@@ -16,3 +16,9 @@ myArrAsc.push(19, 23, 30);
 // sorting existing array
 myArrAsc.sort(function(a, b){return a - b});
 console.log(myArrAsc);
+
+// Q1.4
+// using splice with indexOf to find values within array and remove them
+myArrAsc.splice(myArrAsc.indexOf(8), 1);
+myArrAsc.splice(myArrAsc.indexOf(31), 1);
+console.log(myArrAsc);
