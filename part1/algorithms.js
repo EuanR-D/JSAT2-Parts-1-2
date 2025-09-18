@@ -10,3 +10,9 @@ console.log(myArr);
 let myArrAsc = myArr.toSorted(function(a, b){return a - b});
 console.log(myArrAsc);
 
+// Q1.3
+// Adding 3 numbers to end of array
+myArrAsc.push(19, 23, 30);
+// sorting existing array
+myArrAsc.sort(function(a, b){return a - b});
+console.log(myArrAsc);
