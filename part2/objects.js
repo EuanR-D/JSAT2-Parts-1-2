@@ -6,3 +6,10 @@ let myMovie = {
 };
 
 console.log(myMovie);
+
+// Q2.2
+// Adding a rating and summary properties to the movie object and assigning values to them
+myMovie.Rating = 5;
+myMovie.Summary = "World War II movie about the Normandy landings";
+
+console.log(myMovie);
