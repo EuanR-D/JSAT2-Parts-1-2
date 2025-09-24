@@ -20,3 +20,9 @@ myMovie.Rating = 4;
 myMovie.Year = 1962;
 
 console.log(myMovie);
+
+// Q2.4
+// Removed summary property from movie object
+delete myMovie.Summary;
+
+console.log(myMovie);
