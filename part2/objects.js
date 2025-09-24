@@ -13,3 +13,10 @@ myMovie.Rating = 5;
 myMovie.Summary = "World War II movie about the Normandy landings";
 
 console.log(myMovie);
+
+// Q2.3
+// Reassigning values to existing properties within movie object
+myMovie.Rating = 4;
+myMovie.Year = 1962;
+
+console.log(myMovie);
