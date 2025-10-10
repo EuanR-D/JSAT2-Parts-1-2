@@ -40,7 +40,7 @@ function sequentialSearch(arr, target) {
     }
   }
   // returning value of result
-  return foundIndex;
+  return `target: "${target}" at index: ${foundIndex}`;
 }
 
 console.log(sequentialSearch(myArrAsc, 5));
@@ -86,7 +86,7 @@ function binarySearch(arr, target) {
   }
 
   // returning the value of index after searching through
-  return `${target} at index ${foundIndex}`;
+  return `target: "${target}" at index: ${foundIndex}`;
 }
 
 
