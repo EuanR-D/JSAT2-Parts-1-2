@@ -43,6 +43,56 @@ function sequentialSearch(arr, target) {
   return foundIndex;
 }
 
+console.log(sequentialSearch(myArrAsc, 5));
+
 console.log(sequentialSearch(myArrAsc, 30));
 
 console.log(sequentialSearch(myArrAsc, 12));
+
+
+
+
+// Q1.6
+// function that uses binary search algorithm
+// 2 params, array to search through, and target value
+function binarySearch(arr, target) {
+  // setting default value to return if target isnt found
+  let foundIndex = -1;
+
+  // sorting the array first to allow the algorithm to function properly
+  let sortedArray = arr.toSorted(function(a, b){return (a - b)});
+  console.log(sortedArray);
+
+  // initial range of algorithm, spanning whole array
+  let start = 0;
+  let end = sortedArray.length - 1;
+
+  // condition becomes untrue if value isnt found when start = end +1
+  while (start <= end) {
+    // midpoint of range, rounded down to nearest int
+    let midpoint = Math.floor((start + end) / 2);
+    
+    if (sortedArray[midpoint] == target) {
+      // matching value updates index and breaks loop
+      foundIndex = midpoint;
+      break;
+    } else if (sortedArray[midpoint] < target) {
+      // lower than target changes start to 1 space above current midpoint
+      start = midpoint + 1;
+    } else if (sortedArray[midpoint] > target) {
+      // higher than target changes start to 1 space below current midpoint
+      end = midpoint - 1;
+    }
+  }
+
+  // returning the value of index after searching through
+  return `${target} at index ${foundIndex}`;
+}
+
+
+console.log(myArr);
+console.log(binarySearch(myArr, 16));
+
+console.log(myArr);
+console.log(binarySearch(myArr, 15));
+
