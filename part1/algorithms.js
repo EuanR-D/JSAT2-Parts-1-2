@@ -43,6 +43,8 @@ function sequentialSearch(arr, target) {
   return foundIndex;
 }
 
+console.log(sequentialSearch(myArrAsc, 5));
+
 console.log(sequentialSearch(myArrAsc, 30));
 
 console.log(sequentialSearch(myArrAsc, 12));
