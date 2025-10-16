@@ -1,3 +1,13 @@
+// File: algorithms.js
+// Description: JavaScript Assessment task 2: Part B - Q1.1 - 1.11
+// Author: Euan Renfrey-Douglas
+// Date created: 2025-08-29
+// Last modified: 2025-10-17
+// Version: 1.6.2
+
+
+
+
 // Q1.1
 // Declaring variable containing an array of numbers
 let myArr = [11, 5, 8, 3, 25, 16, 31, 45, 14, 20];
@@ -5,10 +15,14 @@ let myArr = [11, 5, 8, 3, 25, 16, 31, 45, 14, 20];
 console.log(myArr);
 
 // Q1.2
-// Array of numbers sorted from smallest to largest (ascending)
-// toSorted() sorts the array based on the initial of each primitive
-// function(a, b) changes toSorted() to sort by whole value
+// Creating a copy of myArr with numbers sorted from smallest to largest (ascending)
+// toSorted() method sorts the array by comparing the initial of each primitive 
+// (i.e 45 < 5 < 8)
+// Adding a function that compares the two numbers by subtraction changes toSorted() to compare by whole value 
+// (i.e 5 < 8 < 45)
 let myArrAsc = myArr.toSorted(function(a, b){return a - b});
+
+// Outputting the sorted array to the console
 console.log(myArrAsc);
 
 // Q1.3
