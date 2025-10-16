@@ -1,6 +1,7 @@
 // Q1.1
-// An array of numbers
+// Declaring variable containing an array of numbers
 let myArr = [11, 5, 8, 3, 25, 16, 31, 45, 14, 20];
+// Outputting the array to the console
 console.log(myArr);
 
 // Q1.2
