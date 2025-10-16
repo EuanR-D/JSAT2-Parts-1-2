@@ -3,7 +3,7 @@
 // Author: Euan Renfrey-Douglas
 // Date created: 2025-08-29
 // Last modified: 2025-10-17
-// Version: 1.6.3
+// Version: 1.6.4
 
 
 
@@ -43,8 +43,16 @@ console.log(myArrAsc);
 
 // Q1.4
 // using splice with indexOf to find values within array and remove them
+
+// Removing the number 8 from the array
+// Using indexOf method to find the position of 8 in the array
+// Embedding that value into the splice method, to start at that index, and then remove 1 item only
 myArrAsc.splice(myArrAsc.indexOf(8), 1);
+
+// Repeating above steps to remove number 31 from the array
 myArrAsc.splice(myArrAsc.indexOf(31), 1);
+
+// Outputting the modified array to console 
 console.log(myArrAsc);
 
 
