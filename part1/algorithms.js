@@ -3,8 +3,7 @@
 // Author: Euan Renfrey-Douglas
 // Date created: 2025-08-29
 // Last modified: 2025-10-17
-// Version: 1.6.2
-
+// Version: 1.6.3
 
 
 
@@ -13,6 +12,8 @@
 let myArr = [11, 5, 8, 3, 25, 16, 31, 45, 14, 20];
 // Outputting the array to the console
 console.log(myArr);
+
+
 
 // Q1.2
 // Creating a copy of myArr with numbers sorted from smallest to largest (ascending)
@@ -25,18 +26,27 @@ let myArrAsc = myArr.toSorted(function(a, b){return a - b});
 // Outputting the sorted array to the console
 console.log(myArrAsc);
 
+
+
 // Q1.3
-// Adding 3 numbers to end of array
+// Using the push method 3 numbers to end of array variable
 myArrAsc.push(19, 23, 30);
-// sorting existing array
+
+// Using the sort() method to modify the array instead of creating a copy
+// Using the same function as Q1.2 to sort by whole value
 myArrAsc.sort(function(a, b){return a - b});
+
+// Outputting the longer sorted array to the console
 console.log(myArrAsc);
+
+
 
 // Q1.4
 // using splice with indexOf to find values within array and remove them
 myArrAsc.splice(myArrAsc.indexOf(8), 1);
 myArrAsc.splice(myArrAsc.indexOf(31), 1);
 console.log(myArrAsc);
+
 
 
 // Q1.5
