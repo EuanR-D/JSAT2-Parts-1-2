@@ -58,24 +58,40 @@ console.log(myArrAsc);
 
 
 // Q1.5
-// function to search through array from start
+// A function that searches for a target value by checking everything from start to finish in an array, stopping if it is found
+// Parameters are the array to search through, and the value to search for
 function sequentialSearch(arr, target) {
-  // result variable set to default value for not found
+  // Result index variable set to -1 as default for Not-found
   let foundIndex = -1;
 
-  // for loop to iterate through each item off array
-  for(let i = 0; i <= arr.length; i++) {
-    // if statement to compare current item to target value
+  // Using a For loop to iterate through each item off array
+  // Counter starts at 0
+  // Will run when the counter is less than the length of given array, so it can cover everything in the array
+  // Counter will increase by 1 each loop
+  for(let i = 0; i < arr.length; i++) {
+
+    // Using an If condition to check if the current item in the array is equal to the target number
     if (arr[i] == target) {
-      // updates result to position of target value and stops
+
+      // If it is, the result index will update result to the current position, and end the loop early
+      // If it isnt, the loop will keep running until it has checked the entire array
       foundIndex = i;
       break;
     }
   }
-  // returning value of result
-  return foundIndex;
+
+  // If the index variable remains default, then the target was not found and the output will display that in the console
+  if (foundIndex == -1) {
+    return console.log(`The target ${target} was not found`);
+  } else {
+
+    // If the index variable has updated, then it will output display the position the target was found at in the console
+    return console.log(`The target ${target} was found at index ${foundIndex}`)
+  }
 }
 
-console.log(sequentialSearch(myArrAsc, 30));
+// Calling the function to find a number that does exist in the array
+sequentialSearch(myArrAsc, 30);
 
-console.log(sequentialSearch(myArrAsc, 12));
+// Calling the function to find a number that is not in the array
+sequentialSearch(myArrAsc, 12);
