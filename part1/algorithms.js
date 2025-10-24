@@ -67,8 +67,13 @@ console.log(myArrAsc);
 // Parameters are the array to search through, and the value to search for
 // Returns a message stating the index where the target was found, or if it was not found
 function sequentialSearch(arr, target) {
+  
   // Log to state function is attempting to search for target.
   console.log(`sequentialSearch looking for: ${target}`);
+  
+  // Log to show the array being searched
+  console.log(`Searching array [${arr}]`);
+  
 
   // Result index variable set to -1 as default for Not-found
   let foundIndex = -1;
