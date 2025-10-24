@@ -56,12 +56,16 @@ console.log(sequentialSearch(myArrAsc, 12));
 // function that uses binary search algorithm
 // 2 params, array to search through, and target value
 function binarySearch(arr, target) {
+
+  console.log(`binarySearch looking for: ${target}`);
+  console.log(`Initial array: [${arr}]`);
+
   // setting default value to return if target isnt found
   let foundIndex = -1;
 
   // sorting the array first to allow the algorithm to function properly
   let sortedArray = arr.toSorted(function(a, b){return (a - b)});
-  console.log(sortedArray);
+  console.log(`Sorted array: [${sortedArray}]`);
 
   // initial range of algorithm, spanning whole array
   let start = 0;
