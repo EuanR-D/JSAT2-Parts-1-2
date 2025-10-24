@@ -2,8 +2,13 @@
 // Description: JavaScript Assessment task 2: Part B - Q1.1 - 1.11
 // Author: Euan Renfrey-Douglas
 // Date created: 2025-08-29
-// Last modified: 2025-10-17
+// Last modified: 2025-10-24
 // Version: 1.6.5
+
+
+// Functions
+// sequentialSearch - Searches through each item in an array for a target
+// binarySearch - uses binary algorithm to search for target in an array
 
 
 
@@ -60,7 +65,11 @@ console.log(myArrAsc);
 // Q1.5
 // A function that searches for a target value by checking everything from start to finish in an array, stopping if it is found
 // Parameters are the array to search through, and the value to search for
+// Returns a message stating the index where the target was found, or if it was not found
 function sequentialSearch(arr, target) {
+  // Log to state function is attempting to search for target.
+  console.log(`sequentialSearch looking for: ${target}`);
+  
   // Result index variable set to -1 as default for Not-found
   let foundIndex = -1;
 
