@@ -70,6 +70,9 @@ function sequentialSearch(arr, target) {
   // Log to state function is attempting to search for target.
   console.log(`sequentialSearch looking for: ${target}`);
   
+  // Log to show the array being searched
+  console.log(`Searching array [${arr}]`);
+  
   // Result index variable set to -1 as default for Not-found
   let foundIndex = -1;
 
