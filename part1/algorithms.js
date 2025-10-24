@@ -3,7 +3,7 @@
 // Author: Euan Renfrey-Douglas
 // Date created: 2025-08-29
 // Last modified: 2025-10-24
-// Version: 1.6.5
+// Version: 1.7.1
 
 
 // Functions
@@ -69,7 +69,7 @@ console.log(myArrAsc);
 function sequentialSearch(arr, target) {
   // Log to state function is attempting to search for target.
   console.log(`sequentialSearch looking for: ${target}`);
-  
+
   // Result index variable set to -1 as default for Not-found
   let foundIndex = -1;
 
@@ -108,46 +108,65 @@ sequentialSearch(myArrAsc, 12);
 
 
 // Q1.6
-// function that uses binary search algorithm
-// 2 params, array to search through, and target value
+// A function that searches for a target value by checking the middle item in a sorted array, moving up or down if its too low or high, and halving its search area each time.
+// Parameters are the array to search through, and the value to search for
+// Returns a message stating the index where the target was found, or if it was not found
 function binarySearch(arr, target) {
-  // setting default value to return if target isnt found
+
+  // Log to state function is attempting to search for target.
+  console.log(`binarySearch looking for: ${target}`);
+
+  // Log to output the input unsorted array
+  console.log(`Initial array: [${arr}]`);
+
+  // Result index variable set to -1 as default for Not-found
   let foundIndex = -1;
 
   // sorting the array first to allow the algorithm to function properly
   let sortedArray = arr.toSorted(function(a, b){return (a - b)});
-  console.log(sortedArray);
 
-  // initial range of algorithm, spanning whole array
-  let start = 0;
-  let end = sortedArray.length - 1;
+  // Log to output the sorted copy of the array
+  console.log(`Sorted array: [${sortedArray}]`);
 
-  // condition becomes untrue if value isnt found when start = end +1
-  while (start <= end) {
-    // midpoint of range, rounded down to nearest int
-    let midpoint = Math.floor((start + end) / 2);
+  // initial start and endpoint of algorithm range, spanning whole array
+  let startpoint = 0;
+  let endpoint = sortedArray.length - 1;
+
+  // condition becomes untrue when startpoint is higher than endpoint, which occurs when no match is found
+  while (startpoint <= endpoint) {
+
+    // midpoint of range where the algorithm will check
+    // rounded down to nearest int
+    let midpoint = Math.floor((startpoint + endpoint) / 2);
     
+    // if the midpoint matches the target, update index and end loop
     if (sortedArray[midpoint] == target) {
-      // matching value updates index and breaks loop
       foundIndex = midpoint;
       break;
-    } else if (sortedArray[midpoint] < target) {
-      // lower than target changes start to 1 space above current midpoint
-      start = midpoint + 1;
-    } else if (sortedArray[midpoint] > target) {
-      // higher than target changes start to 1 space below current midpoint
-      end = midpoint - 1;
+    }
+     // if the midpoint is lower than target, it will bring the startpoint above the midpoint, halving the subsequent search range
+    else if (sortedArray[midpoint] < target) {
+      startpoint = midpoint + 1;
+    } 
+    // if the midpoint is higher than target, it will bring the endpoint below the midpoint, halving the subsequent search range
+    else if (sortedArray[midpoint] > target) {
+      endpoint = midpoint - 1;
     }
   }
 
-  // returning the value of index after searching through
-  return `${target} at index ${foundIndex}`;
+  // If the index variable remains default, then the target was not found and the output will display that in the console
+  if (foundIndex == -1) {
+    return console.log(`The target ${target} was not found`);
+  } else {
+
+    // If the index variable has updated, then it will output display the position the target was found at in the console
+    return console.log(`The target ${target} was found at index ${foundIndex}`);
+  }
 }
 
+// Calling the function to find a number that does exist in the array
+binarySearch(myArr, 16);
 
-console.log(myArr);
-console.log(binarySearch(myArr, 16));
-
-console.log(myArr);
-console.log(binarySearch(myArr, 15));
+// Calling the function to find a number that is not in the array
+binarySearch(myArr, 15);
 
