@@ -3,7 +3,7 @@
 // Author: Euan Renfrey-Douglas
 // Date created: 2025-08-29
 // Last modified: 2025-10-24
-// Version: 1.6.5
+// Version: 1.7.1
 
 
 // Functions
@@ -69,7 +69,7 @@ console.log(myArrAsc);
 function sequentialSearch(arr, target) {
   // Log to state function is attempting to search for target.
   console.log(`sequentialSearch looking for: ${target}`);
-  
+
   // Result index variable set to -1 as default for Not-found
   let foundIndex = -1;
 
